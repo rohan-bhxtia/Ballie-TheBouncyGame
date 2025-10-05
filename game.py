@@ -18,8 +18,8 @@ ball_radius = 50
 ball_x = WIDTH // 2
 ball_y = HEIGHT - ball_radius
 ball_velocity = 0
-gravity = 0.5
-jump_strength = -10
+gravity = 1
+jump_strength = -20
 
 # ----------------- CLOCK SETTINGS -----------------
 
@@ -51,4 +51,4 @@ while True:
     screen.fill(BLACK)
     pygame.draw.circle(screen, RED, (ball_x, int(ball_y)), ball_radius)
     pygame.display.flip()
-    clock.tick(60)
+    clock.tick(100)
