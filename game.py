@@ -17,9 +17,10 @@ RED   = (255, 0, 0)
 ball_radius = 50
 ball_x = WIDTH // 2
 ball_y = HEIGHT - ball_radius
-ball_velocity = 0
-gravity = 1
-jump_strength = -20
+ball_velocity_x = 0
+ball_velocity_y = 0.0  # Use float for smoother physics
+gravity = 0.5
+move_speed = 5
 
 # ----------------- CLOCK SETTINGS -----------------
 
@@ -33,18 +34,45 @@ while True:
             pygame.quit()
             sys.exit()
 
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE and ball_y == HEIGHT - ball_radius:
-                ball_velocity = jump_strength
-
+    # --- Continuous Input Handling (should be outside the event loop) ---
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_UP] and ball_y >= HEIGHT - ball_radius: # Allow jump only from ground
+        ball_velocity_y = -20     # A strong upward jump
+    if keys[pygame.K_LEFT]:
+        ball_velocity_x = -move_speed      # move left
+    if keys[pygame.K_RIGHT]:
+        ball_velocity_x = move_speed       # move right
+    
+      
     # ----------------- PHYSICS -----------------
 
-    ball_velocity += gravity
-    ball_y += ball_velocity
+    # Apply gravity
+    ball_velocity_y += gravity
 
+    #friction
+    ball_velocity_x *= 0.95  # ✅ Apply friction to slow horizontal movement
+
+    # Update position
+    ball_x += ball_velocity_x
+    ball_y += ball_velocity_y
+
+    # Boundary checks and bounce
+    # Bottom & top
     if ball_y >= HEIGHT - ball_radius:
         ball_y = HEIGHT - ball_radius
-        ball_velocity = 0
+        ball_velocity_y = -ball_velocity_y * 0.7  # bounce with some energy loss
+    elif ball_y <= ball_radius:
+        ball_y = ball_radius
+        ball_velocity_y = -ball_velocity_y * 0.7
+    
+    # Left & right
+    if ball_x >= WIDTH - ball_radius:
+        ball_x = WIDTH - ball_radius
+        ball_velocity_x = -ball_velocity_x * 0.7
+    elif ball_x <= ball_radius:
+        ball_x = ball_radius
+        ball_velocity_x = -ball_velocity_x * 0.7
+
 
     # ----------------- DRAWING -----------------
 
