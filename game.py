@@ -5,7 +5,7 @@ import sys
 
 pygame.init()
 
-WIDTH, HEIGHT = 2000, 1000
+WIDTH, HEIGHT = 200, 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Ballie")
 
