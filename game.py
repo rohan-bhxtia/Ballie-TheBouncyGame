@@ -7,10 +7,10 @@ pygame.init()
 
 WIDTH, HEIGHT = 2000, 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Ballie")
+pygame.display.set_caption("Ballie-the bouncing ball")
 
 BLACK = (0, 0, 0)
-RED   = (255, 0, 0)
+RED   = (0, 0, 255) 
 
 # ----------------- BALL SETTINGS -----------------
 
@@ -20,7 +20,7 @@ ball_y = HEIGHT - ball_radius
 ball_velocity_x = 0
 ball_velocity_y = 0.0  # Use float for smoother physics
 gravity = 0.5
-move_speed = 5
+move_speed = 10
 
 # ----------------- CLOCK SETTINGS -----------------
 
@@ -50,7 +50,7 @@ while True:
     ball_velocity_y += gravity
 
     #friction
-    ball_velocity_x *= 0.95  # ✅ Apply friction to slow horizontal movement
+    ball_velocity_x *= 0.95 # ✅ Apply friction to slow horizontal movement
 
     # Update position
     ball_x += ball_velocity_x
