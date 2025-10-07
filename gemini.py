@@ -10,7 +10,7 @@ pygame.display.set_caption("Ballie - Bouncing Ball with Squash")
 
 # Colors
 BLACK = (0, 0, 0)
-RED   = (0,255, 255)
+RED   = (0,255,0)
 
 # ----------------- BALL SETTINGS -----------------
 ball_radius = 50
