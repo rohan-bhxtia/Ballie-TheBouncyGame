@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-# ----------------- GAMEs SETUP -----------------
+# ----------------- GAMEss SETUP -----------------
 pygame.init()  # Initialize Pygame library
 
 WIDTH, HEIGHT = 2000, 1000  # Screen dimensions
