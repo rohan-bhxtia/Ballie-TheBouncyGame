@@ -2,7 +2,7 @@ import pygame
 import sys
 
 # ----------------- GAMEss SETUP -----------------
-pygame.init()  # Initialize Pygame library
+pygame.init()  # Initiallize Pygame library
 
 WIDTH, HEIGHT = 2000, 1000  # Screen dimensions
 screen = pygame.display.set_mode((WIDTH, HEIGHT))  # Create game window
