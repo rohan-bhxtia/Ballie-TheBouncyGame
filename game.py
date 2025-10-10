@@ -10,7 +10,7 @@ pygame.display.set_caption("Ballie - bouncing ball")
 # Colors
 BLACK = (0, 0, 0)
 
-# ----------------- BALLL SETTINGS -----------------
+# ----------------- BALL SETTINGS -----------------
 ball_radius = 140
 ball_x = WIDTH // 2
 ball_y = HEIGHT - ball_radius - 200
