@@ -1,8 +1,8 @@
 import pygame
 import sys
 
-# ----------------- GAME SETUP -----------------
 pygame.init()
+# ----------------- GAME SETUP -----------------
 WIDTH, HEIGHT = 2000, 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Ballie - bouncing ball")
@@ -148,4 +148,4 @@ while True:
     screen.blit(scaled_ball, (ball_x - radius_x, ball_y - radius_y))
 
     pygame.display.flip()
-    clock.tick(120)
+    clock.tick(140)
