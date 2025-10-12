@@ -8,7 +8,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Ballie - bouncing ball")
 
 # Colors
-BLACK = (0, 0, 0)
+BLACK = (0, 0, 14)
 
 # ----------------- BALL SETTINGS -----------------
 ball_radius = 140
