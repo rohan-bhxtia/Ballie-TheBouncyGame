@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 
 # Set up canvas
-WIDTH, HEIGHT = 400, 400
+WIDTH, HEIGHT = 500, 400
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Hex Color Test")
 
