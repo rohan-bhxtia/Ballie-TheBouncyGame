@@ -18,7 +18,7 @@ color1 = hex_to_rgb("#FF5850")  # orange
 color2 = hex_to_rgb("#00FF00")  # green
 color3 = hex_to_rgb("#0000FF")  # blue
 
-# Main loop
+# Main loops
 running = True
 while running:
     for event in pygame.event.get():
