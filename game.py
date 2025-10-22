@@ -7,7 +7,7 @@ WIDTH, HEIGHT = 2000, 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Ballie - bouncing ball")
 
-# Colors
+# Colors ( )
 BLACK = (0, 0, 14)
 
 # ----------------- BALL SETTINGS -----------------
@@ -53,7 +53,7 @@ while True:
         radius_x = ball_radius * 1.2
         ball_velocity_y = jump_strength
 
-    # Horizontal movement
+    # Horizontal movement-
     if keys[pygame.K_LEFT]:
         ball_velocity_x -= move_accel
     if keys[pygame.K_RIGHT]:
