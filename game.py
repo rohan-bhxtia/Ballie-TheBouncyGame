@@ -105,14 +105,14 @@ while True:
             radius_x = ball_radius * 0.7
             radius_y = ball_radius * 1.3
 
-        # Right wall
+        # Right wally
         elif ball_x >= WIDTH - ball_radius:
             ball_x = WIDTH - ball_radius
             ball_velocity_x = -ball_velocity_x * 0.7
             radius_x = ball_radius * 0.7
             radius_y = ball_radius * 1.3
 
-    # ----------------- SHAPE RESTORATIONs -----------------
+    # ----------------- SHAPE RESTORATIONs   -----------------
     restore_rate = 0.25
     is_sliding_slowly = abs(ball_velocity_x) < 2.0
 
