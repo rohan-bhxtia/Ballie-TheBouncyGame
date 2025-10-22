@@ -7,8 +7,9 @@ WIDTH, HEIGHT = 2000, 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Ballie - bouncing ball")
 
-# Colors ( )
-BLACK = (0, 0, 14)
+# Colors
+class Colors:
+    BACKGROUND = (0, 0, 14)
 
 # ----------------- BALL SETTINGS -----------------
 ball_radius = 140
@@ -134,7 +135,7 @@ while True:
             ball_y = HEIGHT - ball_radius
 
     # ----------------- DRAW -----------------
-    screen.fill(BLACK)
+    screen.fill(Colors.BACKGROUND)
 
     # Soft shadow
     shadow_width = int(radius_x * 2.2)
