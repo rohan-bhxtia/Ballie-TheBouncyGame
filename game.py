@@ -22,14 +22,15 @@ ball_velocity_y = 0.0
 ball_img = pygame.image.load("ball.png").convert_alpha()  # keep transparency
 ball_img = pygame.transform.smoothscale(ball_img, (ball_radius * 2, ball_radius * 2))
 
-gravity = 0.5
-move_accel = 1.0
-max_speed = 25
-friction = 0.98
-ground_friction = 0.9
-jump_strength = -20
-
-BOUNCE_STOP_THRESHOLD = 2.0
+# ----------------- PHYSICS CONSTANTS -----------------
+class Physics:
+    GRAVITY = 0.5
+    MOVE_ACCEL = 1.0
+    MAX_SPEED = 25
+    AIR_FRICTION = 0.98
+    GROUND_FRICTION = 0.9
+    JUMP_STRENGTH = -20
+    BOUNCE_STOP_THRESHOLD = 2.0
 
 radius_x = ball_radius
 radius_y = ball_radius
@@ -52,25 +53,25 @@ while True:
     if keys[pygame.K_UP] and is_on_ground:
         radius_y = ball_radius * 0.8
         radius_x = ball_radius * 1.2
-        ball_velocity_y = jump_strength
+        ball_velocity_y = Physics.JUMP_STRENGTH
 
     # Horizontal movement-
     if keys[pygame.K_LEFT]:
-        ball_velocity_x -= move_accel
+        ball_velocity_x -= Physics.MOVE_ACCEL
     if keys[pygame.K_RIGHT]:
-        ball_velocity_x += move_accel
+        ball_velocity_x += Physics.MOVE_ACCEL
 
     # Limit horizontal speed
-    ball_velocity_x = max(-max_speed, min(max_speed, ball_velocity_x))
+    ball_velocity_x = max(-Physics.MAX_SPEED, min(Physics.MAX_SPEED, ball_velocity_x))
 
     # ----------------- PHYSICS -----------------
-    ball_velocity_y += gravity
+    ball_velocity_y += Physics.GRAVITY
 
     # Apply friction
     if is_on_ground:
-        ball_velocity_x *= ground_friction
+        ball_velocity_x *= Physics.GROUND_FRICTION
     else:
-        ball_velocity_x *= friction
+        ball_velocity_x *= Physics.AIR_FRICTION
 
     # Update position
     ball_x += ball_velocity_x
@@ -83,7 +84,7 @@ while True:
         # Ground collision
         if ball_y >= HEIGHT - ball_radius:
             ball_y = HEIGHT - ball_radius
-            if abs(ball_velocity_y) < BOUNCE_STOP_THRESHOLD:
+            if abs(ball_velocity_y) < Physics.BOUNCE_STOP_THRESHOLD:
                 ball_velocity_y = 0.0
             else:
                 ball_velocity_y = -ball_velocity_y * 0.7
@@ -111,7 +112,7 @@ while True:
             radius_x = ball_radius * 0.7
             radius_y = ball_radius * 1.3
 
-    # ----------------- SHAPE RESTORATION -----------------
+    # ----------------- SHAPE RESTORATIONs -----------------
     restore_rate = 0.25
     is_sliding_slowly = abs(ball_velocity_x) < 2.0
 
