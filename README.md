@@ -35,7 +35,7 @@ A simple 2D physics-based bouncing ball simulation built with Pygame. This proje
     ```bash
     python game.py
     ```
-    (Note: The game window is set to `2000x1000`. You can adjust the `WIDTH` and `HEIGHT` variables in `game.py` if needed.)
+    (Note: The gaming window is set to `2000x1000`. You can adjust the `WIDTH` and `HEIGHT` variables in `game.py` if needed.)
 
 ---
 
