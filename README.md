@@ -1,6 +1,6 @@
 # 🏀 Ballie - The Bouncing Ball
 
-A simple 2D physics-based bouncing ball simulation built with Pygame. This project demonstrates core game development concepts including a game loop, physics (gravity, friction), keyboard controls, and "squash and stretch" animation principles for a more lively, cartoon-like feel.
+A simple 2D physics-based bouncing ball simulation built with Pygame. This project demonstrates core game development concepts including a game loop, physics (gravity, friction), keyboard controls, and "squash and stretch" animation principles for a more lively, cartoon-like feel..
 
 ---
 
