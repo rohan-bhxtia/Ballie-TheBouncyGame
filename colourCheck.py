@@ -1,6 +1,6 @@
 import pygame
 
-# Initialize Pygame
+# Initialize Pygame.
 pygame.init()
 
 # Set up canvas
