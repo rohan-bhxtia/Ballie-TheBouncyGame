@@ -14,7 +14,7 @@ A simple 2D physics-based bouncing ball simulation built with Pygame. This proje
 
 ---
 
-## 🚀 How to Runsss
+## 🚀 How to Runssss
 
 1.  **Clone the repository:**
     ```bash
