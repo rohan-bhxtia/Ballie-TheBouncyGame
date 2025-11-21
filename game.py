@@ -2,7 +2,7 @@ import pygame
 import sys
 
 pygame.init()
-# ----------------- GAME SETUPdd -----------------
+# ----------------- GAME SETUPddd -----------------
 WIDTH, HEIGHT = 2100, 1000
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Ballie - bouncing ball")
